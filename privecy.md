@@ -1,0 +1,1 @@
+"This is a Codegeist 2026 hackathon project. It does not collect, store, or sell user data."
