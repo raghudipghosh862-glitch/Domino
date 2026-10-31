@@ -1,0 +1,44 @@
+modules:
+  jira:issuePanel:
+    - key: domino-hello-world-panel
+      resource: main
+      resolver:
+        function: resolver
+      viewportSize: medium
+      title: Domino DEV
+      icon: https://developer.atlassian.com/platform/forge/images/issue-panel-icon.svg
+  function:
+    - key: resolver
+      handler: index.handler
+
+resources:
+  - key: main
+    path: static/hello-world/build
+    tunnel:
+      port: 3000
+
+remotes:
+  - key: domino-python-backend
+    baseUrl: 'https://chally-diplophonic-aubrie.ngrok-free.dev'
+    operations:
+      - fetch
+
+permissions:
+  external:
+    fetch:
+      backend:
+        - remote: domino-python-backend
+  scopes:
+    - read:jira-work
+    - read:page:confluence
+    - read:confluence-content.summary
+  content:
+    styles:
+      - 'unsafe-inline'
+
+app:
+  runtime:
+    name: nodejs24.x
+    memoryMB: 256
+    architecture: arm64
+  id: ari:cloud:ecosystem::app/940d4c23-491f-46cd-be67-8afad3d80741
