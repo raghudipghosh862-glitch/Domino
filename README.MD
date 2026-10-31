@@ -58,8 +58,6 @@ Navigate to the backend directory, set up your virtual environment, and run the 
 
 ```bash
 cd domino-mcp
-python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn main:app --reload --port 8000
 ```
