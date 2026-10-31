@@ -77,7 +77,7 @@ resolver.define('fetchGraphData', async (req) => {
 
   let mcpInsights = null;
   // 2. Send the correct JSON payload (nodes and edges) to Python to prevent the 422 error
-  const mcpResponse = await api.fetch('https://chally-diplophonic-aubrie.ngrok-free.dev/analyze', {
+  const mcpResponse = await api.fetch('https://domino-iwtr.onrender.com/analyze', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ nodes: fetchedNodes, edges: fetchedEdges })

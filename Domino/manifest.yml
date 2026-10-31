@@ -19,7 +19,7 @@ resources:
 
 remotes:
   - key: domino-python-backend
-    baseUrl: 'https://chally-diplophonic-aubrie.ngrok-free.dev'
+    baseUrl: https://domino-iwtr.onrender.com
     operations:
       - fetch
 
